@@ -1,0 +1,105 @@
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <html class = "bg_2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.registerbtn {
+    background-color: rgb(61, 61, 145);
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form action="/addBook" method = "POST">
+  <div class="container">
+  <p>
+    <a href="/" class = "button"> Home</a>
+    <a href="/addAuthors" class = "button"> Add Author</a>
+    <a href="/getBooks" class = "button"> List Books</a>
+    <a href="/getAuthors" class = "button"> List Authors</a>
+    <a href="/updateAuthor" class = "button"> Update Author</a>
+    <a href="/deleteBook" class = "button">Delete Book</a>
+  </p>
+  
+    <h1>Add new book</h1>
+    <p>Please fill in this form to add a new book.</p>
+    <hr>
+
+    <label for="title"><b>Title</b></label>
+    <input type="text" placeholder="Enter Title" name="title" required>
+    
+    <label for="author"><b>Author Id</b></label>
+    <input type="text" placeholder="Enter Author Id" name="author" required>
+
+    <label for="isbn"><b>ISBN</b></label>
+    <input type="text" name="isbn" value = <%=isbn%>>
+
+    <label for="date"><b>Date of Publication</b></label>
+    <input class="textbox-n" type="date" onfocus="(this.type='date')" onblur="(this.type='text')" name = "date" required/>
+
+	<p>
+    <label for="summary"><b>Summary</b></label>
+    <input type="text" placeholder="Enter Summary" name="summary" required>
+    </p>
+    <hr>
+
+    <button type="submit" class="registerbtn" >Add Book</button>
+
+  </div>
+  
+</form>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+
+.home_bg{
+    background-image : url(/library.jpg);
+    background-size:cover;
+    clear:both;
+    padding:0px;
+    margin:0px;
+    
+    }
+
+.bg_2{
+        background-image : url(/library2.jpg);
+        }

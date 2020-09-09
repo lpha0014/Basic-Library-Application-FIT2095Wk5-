@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <html class = "home_bg">
+        <a href="/"</a>
+            <button>Home</button>
+        <a href="/addAuthors"</a>
+            <button>Add Author</button>
+        <a href="/addBook"</a>
+            <button>Add Book</button>
+        <a href="/getAuthors"</a>
+            <button>List Authors</button>
+        <a href="/updateAuthor"</a>
+            <button>Update Author</button>
+            <a href="/deleteBook"><button>Delete Book</button></a>
+    </head>
+    <head>
+        <style>
+        .button {
+            font: 15px Trebuchet MS;
+            text-decoration: none;
+            background-color: #EEEEEE;
+            color: #333333;
+            padding: 2px 6px 2px 6px;
+            border-top: 1px solid #CCCCCC;
+            border-right: 1px solid #333333;
+            border-bottom: 1px solid #333333;
+            border-left: 1px solid #CCCCCC;
+          }
+        </style>
+    </head>
+<head>
+    
+
+    <style>
+        table,th,td {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+            }
+            /* table {
+            table-layout: fixed ;
+            } */
+            td {
+            width: 25% ;
+            }
+        th {
+        text-align: left;
+        background-color: blue;
+        color: white;
+            }   
+        td, th {
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+    
+    tr:nth-child(even){background-color: #f2f2f2;}
+    tr:nth-child(odd){background-color: #f2f2f2;}
+
+tr:hover {background-color: rgb(0, 216, 205);}
+
+  </style>
+
+<body>
+    <h1 style="color:white;">List of books</h1>
+  </br>
+  <h3 style="color:white;">Table of Books:
+      <table>
+          <tr>
+              <th>#</th>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Date of publication</th>
+              <th>ISBN</th>
+              <th>Summary</th>
+          </tr>
+          <% for ( let i =0; i< bookDB.length;i++){ %>
+              <tr>
+                <td>
+                    <%= (i+1) %>
+                </td>
+                  <td>
+                      <%= bookDB[i]._id %>
+                  </td>
+                  <td>
+                      <%= bookDB[i].title %>
+                  </td>
+                  <td>
+                    <%= bookDB[i].author.name.firstName + " " + bookDB[i].author.name.lastName%>
+                </td>
+                <td>
+                    <%= bookDB[i].date %>
+                </td>
+                <td>
+                    <%= bookDB[i].isbn %>
+                </td>
+                <td>
+                    <%= bookDB[i].summary %>
+                </td>
+              </tr>
+              <% }%>
+   </table>
+  </h3>
+</body>
+</html>
+
+

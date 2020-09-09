@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <a href="/" class = "button"> Home</a>
+        <a href="/addAuthors" class = "button"> Add Author</a>
+        <a href="/addBook" class = "button"> Add Book</a>
+        <a href="/getBooks" class = "button"> List Books</a>
+        <a href="/updateAuthor" class = "button"> Update Author</a>
+        <a href="/deleteBook" class = "button">Delete Book</a>
+        <style>
+        .button {
+            font: 15px Trebuchet MS;
+            text-decoration: none;
+            background-color: #EEEEEE;
+            color: #333333;
+            padding: 2px 6px 2px 6px;
+            border-top: 1px solid #CCCCCC;
+            border-right: 1px solid #333333;
+            border-bottom: 1px solid #333333;
+            border-left: 1px solid #CCCCCC;
+          }
+        </style>
+    </head>
+<head>
+    
+    <link rel="stylesheet" href="styles.css">
+    <html class = "bg_2">
+
+    <style>
+        table,th,td {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+            }
+            table {
+            table-layout: wrap ;
+            }
+            td {
+            width: 25% ;
+            }
+        th {
+        text-align: left;
+        background-color: blue;
+        color: white;
+            }   
+        td, th {
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+    
+    tr:nth-child(even){background-color: #f2f2f2;}
+    tr:nth-child(odd){background-color: #f2f2f2;}
+
+tr:hover {background-color: rgb(0, 216, 205);}
+
+  </style>
+
+<body>
+    <h1 style="color:black;">List of books</h1>
+  </br>
+  <h3 style="color:black;">Table of Books:
+      <table>
+          <tr>
+              <th>#</th>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last name</th>
+              <th>Date of Birth</th>
+              <th>State</th>
+              <th>Suburb</th>
+              <th>Street</th>
+              <th>Unit</th>
+              <th>Number of books</th>
+              </th>
+          </tr>
+          <% for ( let i =0; i< authDB.length;i++){ %>
+              <tr>
+                <td>
+                    <%=(i+1) %>
+                </td> 
+                  <td>
+                      <%= authDB[i]._id %>
+                  </td>
+                  <td>
+                      <%= authDB[i].name.firstName %>
+                  </td>
+                  <td>
+                    <%= authDB[i].name.lastName %>
+                </td>
+                <td>
+                    <%= authDB[i].dob %>
+                </td>
+                <td>
+                    <%= authDB[i].address.state %>
+                </td>
+                <td>
+                    <%= authDB[i].address.suburb %>
+                </td>
+                <td>
+                    <%= authDB[i].address.street %>
+                </td>
+                <td>
+                    <%= authDB[i].address.unit %>
+                </td>
+                <td>
+                    <%= authDB[i].numBooks %>
+                </td>
+              </tr>
+              <% }%>
+   </table>
+  </h3>
+</body>
+</html>
+
+
